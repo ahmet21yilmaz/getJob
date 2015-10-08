@@ -1,0 +1,23 @@
+<ion-view view-title="Sign up">
+  <ion-content class="padding">
+<div class ="list">
+   <label class="item item-input item-floating-label">
+      <span class="input-label">Email</span>
+      <input type="email" ng-model="vm.email" placeholder="Email">
+   </label>
+   <label class="item item-input item-floating-label">
+      <span class="input-label">Password</span>
+      <input type="password" ng-model="vm.password" ng-minlength="3" placeholder="Password">
+   </label>
+   <div class="padding">
+      <button  ng-click="vm.createUser()" ng-disabled="!vm.email || !vm.password" class="button button-block button-assertive">Register
+      </button>
+   </div>
+   <p class="text-center">
+                <a href="#/main">I have an account.</a>
+            </p>
+   <p ng-if="vm.message">Message: <strong>{{ vm.message }}</strong></p>
+  <p ng-if="vm.error">Error: <strong>{{ vm.error }}</strong></p>
+</div>
+</ion-content>
+</ion-view>

@@ -1,0 +1,20 @@
+
+<ion-view view-title="All jobs">
+  <ion-content>
+    <div class="bar bar-header item-input-inset">
+  <label class="item-input-wrapper">
+    <i class="icon ion-ios-search placeholder-icon"></i>
+    <input type="search" ng-model="searchClass" placeholder="Search for a job ">
+  </label>
+
+</div>
+    <ion-list>
+      <ion-item class="item item-thumbnail-left" ng-repeat="class in classes | filter:searchClass | orderBy:'title'" type="item-text-wrap" href="#/tab/chats/{{class.id}}">
+        <img ng-src="{{class.image}}">
+        <h2>{{class.price}}</h2>
+        <p>{{class.title}}</p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

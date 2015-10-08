@@ -1,0 +1,35 @@
+<ion-view view-title="" >
+  <ion-content class="padding">
+
+    <div class="padding text-center">
+      <h3>Welcome to Job Search Application </h3>
+    </div>
+    <div  style="color:red;font-size:12px;font-style:normal;" class="padding text-center">
+      <span>{{lm.loginError}}</span>
+    </div>
+  <div class ="list" >
+   <label class="item item-input item-floating-label">
+      <span class="input-label">Email</span>
+      <input type="email" ng-model="lm.email" placeholder="Email">
+   </label>
+   <label class="item item-input item-floating-label">
+      <span class="input-label">Password</span>
+      <input type="password" ng-model="lm.password" ng-minlength="3" placeholder="Password">
+   </label>
+   <div class="padding">
+      <button  ng-click="lm.validate()" ng-disabled="!lm.email || !lm.password" class="button button-block button-assertive">Sign In
+      </button>
+   </div>
+   <!--Sign up button-->
+
+    <p class="text-center">
+                <a href="#/register">Dont have an account</a>
+            </p>
+
+</div>
+
+<div class="buttons text-center">
+       <button class="button button-big button-clear" ui-sref="tab.dash"><strong>Skip for now </strong></button>
+    </div>
+</ion-content>
+</ion-view>

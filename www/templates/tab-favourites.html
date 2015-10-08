@@ -1,0 +1,40 @@
+<ion-view view-title="My Favorite Jobs">
+  <ion-content>
+    <!--
+    <div ng-show="userloggedIn" class="list card" ng-repeat="favClass in favoritesClasses | orderBy:title">
+      <div class =" item item-divider text-center">
+         <h3>{{favClass.title}}</h3>
+      </div>
+
+      <div class="item item-body">
+        <p>
+           <div class="text-center">
+            <img ng-src="{{favClass.image}}">
+           </div>
+
+           <div class="text-left">
+              <h2>Booking Price:{{favClass.price}}</h2>
+           </div>
+
+        </p>
+      </div>
+    </div>
+  -->
+
+    <ion-list ng-show="userloggedIn">
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="favClass in favoritesClasses | orderBy:title">
+        <img ng-src="{{favClass.image}}">
+
+        <h2>{{favClass.title}}</h2>
+        <p>Booking Price:{{favClass.price}}</p>
+
+      </ion-item>
+    </ion-list>
+
+  <ion-item ng-show="!userloggedIn" ui-sref="main" class="ng-hide text-center padding" type="item-text-wrap" style="color:red;font-size:20px;font-style:bold;">
+  <h3>User Not Logged In! <h3>
+    <p>Please Login To See Your Favourites</p>
+
+  </ion-item>
+</ion-content>
+</ion-view>
